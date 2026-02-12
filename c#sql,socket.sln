@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36915.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "songPlayer", "WindowsFormsApp5\songPlayer.csproj", "{382FC910-E0FA-482E-AA72-7602A8C8F8CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sokcet_sever", "sokcet\sokcet_sever.csproj", "{F042A038-05C1-4868-B12B-6BE03F39F6E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "socket_client", "socket_client\socket_client.csproj", "{4218EBD4-964E-4A3F-BD51-57FEB8A6E91A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sqlcontest", "sql\sqlcontest.csproj", "{16E72592-6092-4BF7-9F90-F3BFBA819D4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sqlurl", "WindowsFormsApp1\sqlurl.csproj", "{CAFBF07B-3B27-4251-A14E-017CDF1A8A2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sqlUserDemo", "sqlUserDemo\sqlUserDemo.csproj", "{EED2EB02-F6DD-4B5E-8DAE-4A587B7DDADD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataImport", "文件导入\DataImport.csproj", "{42040E72-89F0-44E3-BD53-8083D0261128}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{382FC910-E0FA-482E-AA72-7602A8C8F8CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{382FC910-E0FA-482E-AA72-7602A8C8F8CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{382FC910-E0FA-482E-AA72-7602A8C8F8CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{382FC910-E0FA-482E-AA72-7602A8C8F8CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F042A038-05C1-4868-B12B-6BE03F39F6E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F042A038-05C1-4868-B12B-6BE03F39F6E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F042A038-05C1-4868-B12B-6BE03F39F6E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F042A038-05C1-4868-B12B-6BE03F39F6E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4218EBD4-964E-4A3F-BD51-57FEB8A6E91A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4218EBD4-964E-4A3F-BD51-57FEB8A6E91A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4218EBD4-964E-4A3F-BD51-57FEB8A6E91A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4218EBD4-964E-4A3F-BD51-57FEB8A6E91A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16E72592-6092-4BF7-9F90-F3BFBA819D4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16E72592-6092-4BF7-9F90-F3BFBA819D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16E72592-6092-4BF7-9F90-F3BFBA819D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16E72592-6092-4BF7-9F90-F3BFBA819D4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAFBF07B-3B27-4251-A14E-017CDF1A8A2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAFBF07B-3B27-4251-A14E-017CDF1A8A2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAFBF07B-3B27-4251-A14E-017CDF1A8A2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAFBF07B-3B27-4251-A14E-017CDF1A8A2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EED2EB02-F6DD-4B5E-8DAE-4A587B7DDADD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EED2EB02-F6DD-4B5E-8DAE-4A587B7DDADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EED2EB02-F6DD-4B5E-8DAE-4A587B7DDADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EED2EB02-F6DD-4B5E-8DAE-4A587B7DDADD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42040E72-89F0-44E3-BD53-8083D0261128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42040E72-89F0-44E3-BD53-8083D0261128}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42040E72-89F0-44E3-BD53-8083D0261128}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42040E72-89F0-44E3-BD53-8083D0261128}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CCC25A9D-9820-4011-A7DD-577D3CC195BE}
+	EndGlobalSection
+EndGlobal
