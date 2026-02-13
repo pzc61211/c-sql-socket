@@ -48,7 +48,10 @@ namespace 文件导入
             {
                 
                 reader.ReadLine();//把第一行读掉
-                string connstr = @"server=.\sql2019;uid=sa;pwd=domino123;database=phpdb2";
+
+                string connstr = ConfigurationManager.ConnectionStrings["Sql"].ConnectionString;
+
+
                 using (SqlConnection conn = new SqlConnection(connstr))
                 {
                     using (SqlCommand cmd = conn.CreateCommand())
