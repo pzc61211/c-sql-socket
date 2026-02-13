@@ -4,7 +4,7 @@ namespace sqlUserDemo
 {
 
     //配置文件连接字符串
-    internal class dbHelper
+    internal class DbHelper
     {
         private static string connStr = ConfigurationManager.ConnectionStrings
             ["connectionStrings"].ConnectionString;//获取连接字符串

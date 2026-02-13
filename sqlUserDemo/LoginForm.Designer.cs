@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.btnLoad = new System.Windows.Forms.Button();
-            this.btnRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtUid = new System.Windows.Forms.TextBox();
+            this.txtUserid = new System.Windows.Forms.TextBox();
             this.txtPwd = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -45,16 +44,6 @@
             this.btnLoad.Text = "登录";
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.Location = new System.Drawing.Point(255, 202);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(102, 42);
-            this.btnRegister.TabIndex = 1;
-            this.btnRegister.Text = "注册";
-            this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -74,12 +63,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "密码";
             // 
-            // txtUid
+            // txtUserid
             // 
-            this.txtUid.Location = new System.Drawing.Point(175, 109);
-            this.txtUid.Name = "txtUid";
-            this.txtUid.Size = new System.Drawing.Size(113, 21);
-            this.txtUid.TabIndex = 4;
+            this.txtUserid.Location = new System.Drawing.Point(175, 109);
+            this.txtUserid.Name = "txtUserid";
+            this.txtUserid.Size = new System.Drawing.Size(113, 21);
+            this.txtUserid.TabIndex = 4;
             // 
             // txtPwd
             // 
@@ -88,18 +77,17 @@
             this.txtPwd.Size = new System.Drawing.Size(113, 21);
             this.txtPwd.TabIndex = 5;
             // 
-            // Form1
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 353);
             this.Controls.Add(this.txtPwd);
-            this.Controls.Add(this.txtUid);
+            this.Controls.Add(this.txtUserid);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLoad);
-            this.Name = "Form1";
+            this.Name = "LoginForm";
             this.Text = "用户登录界面";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -109,10 +97,9 @@
         #endregion
 
         private System.Windows.Forms.Button btnLoad;
-        private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUid;
+        private System.Windows.Forms.TextBox txtUserid;
         private System.Windows.Forms.TextBox txtPwd;
     }
 }

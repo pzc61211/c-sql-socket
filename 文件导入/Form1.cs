@@ -62,8 +62,9 @@ namespace 文件导入
                             var strs = temp.Split(',');//按照逗号分，返回字符串
 
                              string sql = @"insert into";
-                            cmd.CommandText = sql;
-                            cmd.ExecuteNonQuery();
+                             cmd.CommandText = sql;
+                             cmd.ExecuteNonQuery();
+                            
                         }
                     }
                         
