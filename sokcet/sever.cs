@@ -27,37 +27,118 @@ namespace sokcet
 
         }
 
+        public async Task ReceiveAsync(Socket socketSend)
+        {
+            byte[] buffer = new byte[1024 * 1024 * 2];
+
+            while (true)
+            {
+
+                try
+                {
+                    // 用异步 ReceiveAsync
+                    int r = await Task.Factory.FromAsync<int>(
+                        socketSend.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, null, null),
+                        socketSend.EndReceive);
+
+                    if (r > 0)
+                    {
+                        string str = Encoding.UTF8.GetString(buffer, 0, r);
+                        showMsg($"{socketSend.RemoteEndPoint}:{str}");
+                    }
+                    else
+                    {
+                        showMsg($"{socketSend.RemoteEndPoint}:断开连接");
+                        socketSend.Close();
+                        break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    showMsg($"{socketSend.RemoteEndPoint}:断开连接 {ex.Message}");
+                    socketSend.Close();
+                    break;
+                }
+            }
+        }
+        public async Task ListenAsync(Socket socketWatch)
+        {
+            while (true)
+            {
+                try
+                {
+                    // 用异步 AcceptAsync，不占线程
+                    Socket socketSend = await Task.Factory.FromAsync(
+                        socketWatch.BeginAccept,
+                        socketWatch.EndAccept,
+                        null);
+
+                    sokcetList.Add(socketSend);
+                    int index = sokcetList.Count - 1;
+
+                    // UI 操作需要回到主线程
+                    this.Invoke(new Action(() =>
+                    {
+                        listBox1.Items.Add(index);
+                    }));
+
+                    showMsg($"{socketSend.RemoteEndPoint}:连接成功");
+
+                    // 每个连接也用 Task 处理
+                    Task.Run(() => ReceiveAsync(socketSend));
+                }
+                catch (Exception ex)
+                {
+                    showMsg("监听异常：" + ex.Message);
+                }
+            }
+        }
         #region 启动服务器
         private void button1_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+
+
+            //    //创建监听Socket
+            //    Socket socketWatch = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            //    //创建IP对象
+
+            //    //IPAddress iPAddress = IPAddress.Parse("0.0.0.0");
+            //    IPAddress iPAddress = IPAddress.Any;
+            //    //创建端口对象
+            //    IPEndPoint point = new IPEndPoint(iPAddress, Convert.ToInt32(txtPort.Text));
+            //    socketWatch.Bind(point);
+            //    //通信socket
+            //    showMsg("监听成功");
+            //    socketWatch.Listen(10);
+
+            //    Thread th = new Thread(Listsen)
+            //    {
+            //        IsBackground = true
+            //    };
+            //    th.Start(socketWatch);
+            //}
+            //catch(Exception ex)
+            //{
+            //    showMsg("启动失败："+ex.Message);
+            //}
+
             try
             {
-
-
-                //创建监听Socket
                 Socket socketWatch = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                //创建IP对象
-
-                //IPAddress iPAddress = IPAddress.Parse("0.0.0.0");
-                IPAddress iPAddress = IPAddress.Any;
-                //创建端口对象
-                IPEndPoint point = new IPEndPoint(iPAddress, Convert.ToInt32(txtPort.Text));
+                IPEndPoint point = new IPEndPoint(IPAddress.Any, Convert.ToInt32(txtPort.Text));
                 socketWatch.Bind(point);
-                //通信socket
-                showMsg("监听成功");
                 socketWatch.Listen(10);
+                showMsg("监听成功");
 
-                Thread th = new Thread(Listsen)
-                {
-                    IsBackground = true
-                };
-                th.Start(socketWatch);
+                // 用 Task 代替 Thread
+                Task.Run(() => ListenAsync(socketWatch));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                showMsg("启动失败："+ex.Message);
+                showMsg("启动失败：" + ex.Message);
             }
-
         }
 
         List<Socket> sokcetList = new List<Socket>();

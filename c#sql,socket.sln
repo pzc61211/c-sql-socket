@@ -9,9 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sokcet_sever", "sokcet\sokc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "socket_client", "socket_client\socket_client.csproj", "{4218EBD4-964E-4A3F-BD51-57FEB8A6E91A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sqlcontest", "sql\sqlcontest.csproj", "{16E72592-6092-4BF7-9F90-F3BFBA819D4D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sqlurl", "WindowsFormsApp1\sqlurl.csproj", "{CAFBF07B-3B27-4251-A14E-017CDF1A8A2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetSqlConstr", "WindowsFormsApp1\GetSqlConstr.csproj", "{CAFBF07B-3B27-4251-A14E-017CDF1A8A2A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sqlUserDemo", "sqlUserDemo\sqlUserDemo.csproj", "{EED2EB02-F6DD-4B5E-8DAE-4A587B7DDADD}"
 EndProject
@@ -35,10 +33,6 @@ Global
 		{4218EBD4-964E-4A3F-BD51-57FEB8A6E91A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4218EBD4-964E-4A3F-BD51-57FEB8A6E91A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4218EBD4-964E-4A3F-BD51-57FEB8A6E91A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{16E72592-6092-4BF7-9F90-F3BFBA819D4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{16E72592-6092-4BF7-9F90-F3BFBA819D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{16E72592-6092-4BF7-9F90-F3BFBA819D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{16E72592-6092-4BF7-9F90-F3BFBA819D4D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CAFBF07B-3B27-4251-A14E-017CDF1A8A2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CAFBF07B-3B27-4251-A14E-017CDF1A8A2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAFBF07B-3B27-4251-A14E-017CDF1A8A2A}.Release|Any CPU.ActiveCfg = Release|Any CPU

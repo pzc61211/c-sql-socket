@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Windows.Forms;
 
 namespace sqlUserDemo
@@ -11,7 +12,7 @@ namespace sqlUserDemo
             InitializeComponent();
         }
 
-
+        
         private void Button1_Click(object sender, EventArgs e)
         {
             
@@ -28,20 +29,21 @@ namespace sqlUserDemo
 
                 using (SqlCommand cmd = new SqlCommand())
                 {
+                    
                     conn.Open();
                     cmd.Connection = conn;
                     cmd.CommandText = string.Format(@"select 
                                                 Username,
                                                 pwd,
                                                 LastErrorDateTime,
-                                                Errortimes 
+                                                Errortimes,
                                                 from userinfo 
                                                 where username='{0}'
                                                 and pwd='{1}'", txtUserid.Text, txtPwd.Text);//查找用户输入的id和密码
 
                     UserInfo userInfo = new UserInfo();
                     
-
+                   
                     #region 获取查询数据
                     using (SqlDataReader reader = cmd.ExecuteReader())//绑定一个reader读取数据
                     {
@@ -50,9 +52,13 @@ namespace sqlUserDemo
                             //把数据全部读出来
                             userInfo.UserName = reader["Username"].ToString();
                             userInfo.Password = reader["pwd"].ToString();
-                            userInfo.LastErrorDateTime = reader["LastErrorDateTime"] == DBNull.Value
-                                 ? DateTime.MinValue  // 或者用 null，但 DateTime 是值类型，要用 DateTime?
-                                 : DateTime.Parse(reader["LastErrorDateTime"].ToString());
+                            //userInfo.LastErrorDateTime = reader["LastErrorDateTime"] == DBNull.Value
+                            //     ? DateTime.MinValue  // 或者用 null，但 DateTime 是值类型，要用 DateTime?
+                            //     : DateTime.Parse(reader["LastErrorDateTime"].ToString());
+
+                            userInfo.LastErrorDateTime = DateTime.Parse(reader["LastErrorDateTime"] ==DBNull.Value?
+                                SqlDateTime.MinValue.ToString(): reader["LastErrorDateTime"].ToString());
+                                
                             userInfo.Errortimes = int.Parse(reader["Errortimes"].ToString());
                            
                         }

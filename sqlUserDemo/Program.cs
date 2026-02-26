@@ -13,7 +13,10 @@ namespace sqlUserDemo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            
+            Application.Run(new DataGridView());
+            //Application.Run(new LoginForm());
+           // Application.Run(new SqlCommandBuilderCRUD());
         }
     }
 }

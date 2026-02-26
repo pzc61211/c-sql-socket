@@ -72,5 +72,10 @@ namespace 文件导入
                 }
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
